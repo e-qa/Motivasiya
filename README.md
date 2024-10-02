@@ -1,6 +1,6 @@
 # Motivasiya
 
-Motivasiya, istifadəçilərin gündəlik motivasiyaedici sitatlar almasına kömək edən bir Electron tətbiqidir. Bu tətbiq, hər 1 saatdan bir təsadüfi sitatlar göstərir.
+Motivasiya, istifadəçilərin gündəlik motivasiyaedici sitatlar almasına kömək edən bir Electron tətbiqidir. Bu tətbiq, hər 1  saatdan bir təsadüfi bildiriş göndərir.
 
 ## Quraşdırma
 
