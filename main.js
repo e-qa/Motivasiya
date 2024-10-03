@@ -5,10 +5,24 @@ const quotes = require('./quotes');
 let win;
 let notificationTime = 3600000;
 
+const gotTheLock = app.requestSingleInstanceLock();
+
+if (!gotTheLock) {
+  app.quit();
+} else {
+  app.on('second-instance', () => {
+    if (win) {
+      if (win.isMinimized()) win.restore();
+      win.focus();
+    }
+  });
+}
+
 function createWindow() {
   win = new BrowserWindow({
     width: 500,
     height: 500,
+    icon: path.join(__dirname, 'logo.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
@@ -33,7 +47,7 @@ app.on('window-all-closed', () => {
 let tray = null;
 
 app.whenReady().then(() => {
-  const iconPath = path.join(__dirname, 'icon.jpeg');
+  const iconPath = path.join(__dirname, 'logo.png');
   tray = new Tray(iconPath);
   const contextMenu = Menu.buildFromTemplate([
     {
@@ -52,15 +66,25 @@ app.whenReady().then(() => {
   ]);
   tray.setToolTip('Motivasiya');
   tray.setContextMenu(contextMenu);
+
+  tray.on('click', () => {
+    win.isVisible() ? win.hide() : win.show();
+  });
+  tray.setContextMenu(contextMenu);
 });
 
 function showNotification() {
   const message = getRandomMessage();
   new Notification({
-    title: 'Motivasiya Mesajı',
+    title: 'Xatırlatma',
     body: message,
+    silent: false,
+    icon: path.join(__dirname, 'logo.png'),
+    timeoutType: 'never',
+    urgency: 'critical',
   }).show();
 }
+
 app.whenReady().then(() => {
   createWindow();
 

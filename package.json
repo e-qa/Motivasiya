@@ -5,7 +5,8 @@
   "scripts": {
     "start": "electron .",
     "build": "electron-builder"
-  },"build": {
+  },
+  "build": {
     "appId": "com.myapp.id",
     "productName": "motivasiya",
     "files": [
@@ -14,7 +15,7 @@
       "preload.js",
       "data.js",
       "quotes.js",
-      "icon.jpeg"
+      "logo.png"
     ],
     "mac": {
       "target": "dmg"
