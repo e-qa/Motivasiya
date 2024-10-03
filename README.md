@@ -1,6 +1,6 @@
 # Motivasiya
 
-Motivasiya, istifadəçilərin gündəlik motivasiyaedici sitatlar almasına kömək edən bir Electron tətbiqidir. Bu tətbiq, hər 1 saatdan bir təsadüfi sitatlar göstərir.
+Motivasiya, istifadəçilərin gündəlik motivasiyaedici sitatlar almasına kömək edən bir Electron tətbiqidir. Bu tətbiq, hər 1  saatdan bir təsadüfi bildiriş göndərir.
 
 ## Quraşdırma
 
@@ -30,3 +30,6 @@ Motivasiya, istifadəçilərin gündəlik motivasiyaedici sitatlar almasına kö
    ```bash
    npm start
    ```
+
+   
+   ![Screenshot (117)](https://github.com/user-attachments/assets/914b1191-97b2-4766-bbd3-06493ba1b0d5)
