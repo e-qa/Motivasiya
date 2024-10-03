@@ -93,7 +93,11 @@ app.whenReady().then(() => {
       createWindow();
     }
   });
-  setInterval(showNotification, notificationTime);
+
+  setTimeout(function run() {
+    showNotification();
+    setTimeout(run, notificationTime);
+  }, notificationTime);
 });
 
 function getRandomMessage() {
